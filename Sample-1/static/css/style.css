@@ -31,6 +31,11 @@ body{
   border-top: 5px solid #77c043; 
 }
 
+.header-top-line {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+
 .green-text {
   color: #76B82A;
   font-weight: 400;
@@ -46,7 +51,6 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 15px 0;
-  border-bottom: 1px solid #eee;
 }
 
 .logo_img {
