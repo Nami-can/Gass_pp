@@ -47,16 +47,31 @@ createApp({
       faqOpen.value[index] = !faqOpen.value[index];
     };
 
+    const openCallbackModal = () => {
+      console.log('Заказать звонок\nПожалуйста, заполните форму:\nИмя и телефон');
+      
+    };
+
+    const openBriefModal = () => {
+      console.log('Заполнить бриф\nПожалуйста, заполните техническое задание');
+    };
+
     const openRequestModal = () => {
       console.log('Оставить заявку\nПожалуйста, заполните форму обратной связи');
     };
 
     const openPriceModal = () => {
       console.log('Запросить прайс-лист\nПожалуйста, заполните форму "Рассчитать стоимость"');
+      
+      const calcBlock = document.querySelector('.calc-block');
+      if (calcBlock) {
+        calcBlock.scrollIntoView({ behavior: 'smooth' });
+      }
     };
 
     const acceptCookies = () => {
-      console.log('Куки приняты')
+      console.log('Куки приняты');
+      
     };
 
     return {
@@ -66,7 +81,7 @@ createApp({
       submitTourForm,
       submitCalcForm,
       toggleFaq,
-      openCallbackModal,
+      openCallbackModal,  
       openRequestModal,
       openPriceModal,
       openBriefModal,
