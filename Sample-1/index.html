@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ТРАСТФАРМА</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css"/>
+</head>
+<body>
+
+<div id="app">
+  <header class="header">
+    <div class="container">
+      <div class="header-top">
+        <div class="logo">
+          <img src="static/media/Logo.png" alt="Logo" class="logo_img">
+        </div>
+
+        <div class="header-pol">
+          <img src="static/media/Rectangle 210.jpg" alt="pol">
+        </div>
+        
+        <div class="header-slogan">
+          ПРОИЗВОДСТВО БАДОВ И СПОРТИВНОГО ПИТАНИЯ
+        </div>
+
+        <div class="header-contacts">
+          <div class="phone-block">
+            <a href="#" class="phone"><img src="static/media/Vector.svg" alt="phone" class="phone_img">8 (945) 000-00-00</a>
+            <a href="#" class="callback" @click.prevent="openCallbackModal">ЗАКАЗАТЬ ЗВОНОК</a>
+          </div>
+          <div class="social-icons">
+            <a href="#"><img src="static/media/Link → SVG.jpg" alt="Telegram"></a>
+            <a href="#"><img src="static/media/Link → max-color.png.png" alt="MAX_H"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-bottom">
+        <nav class="nav">
+          <a href="#" class="active">Главная</a>
+          <a href="#">Контрактное производство</a>
+          <a href="#">Каталог</a>
+          <a href="#">Услуги</a>
+          <a href="#">Новости</a>
+          <a href="#">Контакты</a>
+        </nav>
+        
+        <div class="search-box">
+          <input type="text" placeholder="Поиск на сайте">
+          <button class="search-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.3 10.3L15 14L14 15L10.3 11.3C9.3 12 8 12.4 6.7 12.4C3 12.4 0 9.4 0 5.7C0 2 3 0 6.7 0C10.4 0 13.4 3 13.4 6.7C13.4 8 13 9.3 12.3 10.3ZM6.7 1.4C3.8 1.4 1.4 3.8 1.4 6.7C1.4 9.6 3.8 12 6.7 12C9.6 12 12 9.6 12 6.7C12 3.8 9.6 1.4 6.7 1.4Z" fill="#262626" fill-opacity="0.4"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-wrapper">
+      <div class="hero-left">
+        <span class="hero-label">Главная</span>
+        <h1>
+          Разработаем <span class="orange-text">вашу линейку</span> <br>
+          БАДов и спортивного питания <br>
+          <span class="green-text">под вашим брендом</span>
+        </h1>
+
+        <div class="hero-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#77C043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <strong>ЗАМКНУТАЯ ЭКОСИСТЕМА:</strong>
+              <span>ЛАБОРАТОРИЯ → ЦЕХ → СКЛАД → ОТГРУЗКА.</span>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#77C043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <strong>КОНСТРУКТОР ИЗ 190 ПОБЕДНЫХ ФОРМУЛ.</strong>
+              <span>КОПИРУЙ И ВЛАСТВУЙ.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#77C043" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="feature-text">
+              <strong>БЕЗ ПОСРЕДНИКОВ, БЕЗ ПЕРЕПЛАТ ЗА СТОРОННЮЮ ЛОГИСТИКУ.</strong>
+              <span>ВЫ ПЛАТИТЕ ТОЛЬКО ЗА ФАКТ ПРОИЗВОДСТВА.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <button class="primary-btn" @click="openRequestModal">Оставить заявку</button>
+          <button class="secondary-btn" @click="openPriceModal">Запросить прайс лист</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <img src="static/media/Главный баннер с банками 1.jpg" alt="Banner"/>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Главные направления</h2>
+      <div class="features-grid">
+        <div class="feature-card feature-vitamins orange">
+          <div class="card-content">
+            <h3>Витамины и минералы</h3>
+            <p>Комплексное укрепление защитных сил организма</p>
+          </div>
+          <div class="card-image">
+            <img src="static/media/Mask group.jpg" alt="Витамины">
+          </div>
+        </div>
+
+        <div class="feature-card feature-special white">
+          <div class="card-content">
+            <h3>Специальные препараты</h3>
+            <p>Энергия, сон, антистресс, детокс: всё для восстановления и баланса.</p>
+          </div>
+          <div class="card-image">
+            <img src="static/media/Mask group(1).png" alt="Специальные препараты">
+          </div>
+        </div>
+
+        <div class="feature-card feature-recipe gray">
+          <div class="card-content">
+            <h3>Разработка рецептур<br>и документации</h3>
+          </div>
+          <div class="card-image">
+            <img src="static/media/Mask group.png" alt="Микроскоп">
+          </div>
+        </div>
+
+        <div class="feature-card feature-protein green-dark">
+          <div class="card-content">
+            <h3>Протеины и спортивное питание</h3>
+            <p>Увеличение мышечной массы и оптимизация посттренировочного восстановления</p>
+          </div>
+          <div class="card-image">
+            <img src="static/media/Mask group(2).png" alt="Протеины">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="production">
+    <div class="container">
+      <h2 class="section-title center">СОБСТВЕННОЕ ПРОИЗВОДСТВО</h2>
+      <p class="section-subtitle">соблюдением согласованных сроков отгрузки</p>
+
+      <div class="production-grid">
+        <div class="prod-card large">
+          <div class="prod-badge">Производство в режиме 24/7</div>
+          <div class="prod-content">
+            <h3>Готовность к запуску вашей партии — <br> без ожидания</h3>
+          </div>
+          <img src="static/media/фасовка капсул схела 1.png" alt="Производство" class="prod-img">
+        </div>
+
+        <div class="prod-card small">
+          <div class="prod-badge">Трёхсменный режим</div>
+          <div class="prod-content">
+            <h3>Мощности <br> задействованы <br> непрерывно</h3>
+          </div>
+          <img src="static/media/работа 1.png" alt="Мощности" class="prod-img">
+        </div>
+
+        <div class="prod-card large">
+          <div class="prod-badge">Отгружаем за 7 дней</div>
+          <div class="prod-content">
+            <h3>Это быстрее, чем у <br> 8 из 10 конкурентов</h3>
+          </div>
+          <img src="static/media/разгрузка 1.png" alt="Логистика" class="prod-img">
+        </div>
+
+        <div class="prod-card small projects-card">
+          <div class="prod-badge">Опыт контрактного производства</div>
+          <div class="prod-content center-content">
+            <span class="projects-count">250+ проектов</span>
+            <img src="static/media/ТРАСТФАРМА-02 1.png" alt="Траст Фарма" class="inner-logo">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container forms-wrapper">
+      <div class="forms-left">
+        <h2>Любая форма выпуска — <br> под ваш состав и задачи</h2>
+        <p>
+          Для оперативной и качественной обработки вашего запроса рекомендуем заполнить бриф технического задания. 
+Это позволит нам детально изучить ваши требования и подготовить максимально релевантное предложение»
+        </p>
+        <button class="brief-btn" @click="openBriefModal">Заполнить бриф</button>
+      </div>
+
+      <div class="forms-grid">
+        <div class="form-item">
+          <img src="static/media/Капсулы.png" alt="Капсулы">
+          <span>Капсулы</span>
+        </div>
+        <div class="form-item">
+          <img src="static/media/Круглые_таб.svg" alt="Круглые таблетки">
+          <span>Круглые <br> таблетки</span>
+        </div>
+        <div class="form-item">
+          <img src="static/media/Овальные_таблетки.png" alt="Овальные таблетки">
+          <span>Овальные <br> таблетки</span>
+        </div>
+        <div class="form-item">
+          <img src="static/media/Soft.png" alt="Softgels">
+          <span>Softgels</span>
+        </div>
+        <div class="form-item">
+          <img src="static/media/Мишка.svg" alt="Мармеладные мишки">
+          <span>Мармеладные <br> мишки</span>
+        </div>
+        <div class="form-item">
+          <img src="static/media/Порошок.svg" alt="Порошки">
+          <span>Порошки</span>
+        </div>
+        <div class="form-item">
+          <img src="static/media/Саше.svg" alt="Саше">
+          <span>Саше</span>
+        </div>
+        <div class="form-item">
+          <img src="static/media/Doy_pack.svg" alt="Doy-pack">
+          <span>Doy-pack</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="callback-section">
+    <div class="container callback-container">
+      <div class="callback-form-card">
+        <h3>Заполните форму, <br> и мы оперативно свяжемся</h3>
+        <p class="form-subtext">Вы поймёте, почему 250+ брендов <br> ВЫБРАЛИ НАС</p>
+        
+        <form @submit.prevent="submitTourForm">
+          <input type="text" placeholder="Ваше имя" v-model="tourForm.name" required>
+          <input type="tel" placeholder="+7 (000) 000-00-00" v-model="tourForm.phone" required>
+          <button type="submit" class="submit-btn">Записаться</button>
+          <p v-if="tourForm.message" style="color: #77C043; font-size: 12px; margin-top: 10px;">{{ tourForm.message }}</p>
+        </form>
+        
+        <p class="privacy-text">
+          Я согласен на обработку моих <br> 
+          <a href="#">персональных данных</a>
+        </p>
+      </div>
+      
+      <div class="callback-info">
+        <span class="info-label">полный цикл под ключ</span>
+        <h2>Создадим, оформим, <br> произведём под ваш бренд</h2>
+        <p class="tour-text">Запишитесь на бесплатную онлайн-экскурсию</p>
+      </div>
+      
+      <div class="callback-products">
+        <img src="static/media/банки 1.png" alt="Продукция">
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog">
+    <div class="container">
+      <h2 class="section-title">Каталог</h2>
+      <div class="catalog-grid">
+        <div class="product-card">
+          <img src="static/media/Иммунитет.png"/>
+          <h4>Иммунитет</h4>
+        </div>
+        <div class="product-card">
+          <img src="static/media/энергия 1.png">
+          <h4>Энергия и активность</h4>
+        </div>
+        <div class="product-card">
+          <img src="static/media/Память 1.png">
+          <h4>Память и внимание</h4>
+        </div>
+        <div class="product-card">
+          <img src="static/media/Антиоксиданты 1.png"/>
+          <h4>Антиоксиданты</h4>
+        </div>
+        <div class="product-card">
+          <img src="static/media/Кости и суставы 1.png"/>
+          <h4>Кости и суставы</h4>
+        </div>
+        <div class="product-card">
+          <img src="static/media/Похудение 1.png"/>
+          <h4>Похудение</h4>
+        </div>
+        <div class="product-card">
+          <img src="static/media/набор.png"/>
+          <h4>Набор массы</h4>
+        </div>
+        <div class="product-card">
+          <img src="static/media/баннер-1 1.png"/>
+          <h4>Спортивное питание</h4>
+        </div>
+      </div>
+      <div class="forms-catalog">
+        <button class="catalog-btn">Смотреть весь каталог</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="certification-section">
+    <div class="container">
+      <div class="cert-card">
+        <div class="cert-slider-controls">
+          <div class="cert-dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="cert-nav">
+            <button class="nav-btn up"><img src="static/media/Arrow(1).svg" alt="↑"></button>
+            <button class="nav-btn down"><img src="static/media/Arrow.svg" alt="↓"></button>
+          </div>
+        </div>
+
+        <div class="cert-image">
+          <img src="static/media/item_636 1.png" alt="Свидетельство">
+        </div>
+        
+        <div class="cert-content">
+          <div class="cert-columns-wrapper">
+            <div class="cert-column">
+              <h3>Вся продукция сертифицирована</h3>
+              <ul class="cert-list">
+                <li>Производство — по российским и международным стандартам.</li>
+                <li>Вы получаете не просто товар, а юридически чистый продукт.</li>
+                <li>Фиксируем качество в сертификатах. На каждом этапе — соблюдение норм</li>
+              </ul>
+            </div>
+            <div class="cert-column">
+              <h3>Вы получите все документы</h3>
+              <ul class="cert-list">
+                <li>Декларации соответствия</li>
+                <li>Сертификаты соответствия</li>
+                <li>Сертификаты государственной регистрации</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="cert-logos">
+            <div class="cert-logo-item">
+              <img src="static/media/Haccp.png" alt="">
+              <span>HACCP <br> 22000-2018</span>
+            </div>
+            <div class="cert-logo-item">
+              <img src="static/media/Iso.png" alt="">
+              <span>ISO 22000</span>
+            </div>
+            <div class="cert-logo-item">
+              <img src="static/media/gmp.png" alt="">
+              <span>GMP</span>
+            </div>
+            <div class="cert-logo-item">
+              <img src="static/media/Halal.png" alt="">
+              <span>«Халяль»</span>
+            </div>
+            <div class="cert-logo-item">
+              <img src="static/media/СГР.png" alt="">
+              <span>СГР</span>
+            </div>
+            <div class="cert-logo-item">
+              <img src="static/media/Eac.png" alt="">
+              <span>EAC</span>
+            </div>
+            <div class="cert-logo-item">
+              <img src="static/media/Честный_знак.png" alt="">
+              <span>Честный <br> знак</span>
+            </div>
+          </div>
+        </div> 
+      </div>
+      
+      <div class="cert-steps-grid">
+        <div class="cert-step-item">
+          <div class="cert-step-icon"><img src="static/media/Лаборатория.png" alt=""></div>
+          <h4>Лабораторный контроль</h4>
+          <p>лабораторные тесты на каждой стадии</p>
+        </div>
+        <div class="cert-step-item">
+          <div class="cert-step-icon"><img src="static/media/Образец.png" alt=""></div>
+          <h4>Работа с образцами</h4>
+          <p>перед запуском тиража</p>
+        </div>
+        <div class="cert-step-item">
+          <div class="cert-step-icon"><img src="static/media/Соблюдения_срок.png" alt=""></div>
+          <h4>Соблюдение сроков</h4>
+          <p>производство за 14 дней</p>
+        </div>
+        <div class="cert-step-item">
+          <div class="cert-step-icon"><img src="static/media/Партия.png" alt=""></div>
+          <h4>Партия от 400 штук</h4>
+          <p>Вход — без риска. Убедитесь сами</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-collaboration">
+    <div class="steps-collaboration___contatainer">
+      <div class="steps-wrapper">
+        <span class="label-green">полный цикл под ключ</span>
+        <h2 class="steps-title">Этапы сотрудничества</h2>
+        <div class="timeline-box">
+          <div class="timeline-axis">
+            <div class="t-marker" style="left: -1%"></div>
+            <div class="t-marker" style="left: 21.5%"></div>
+            <div class="t-marker" style="left: 38%"></div>
+            <div class="t-marker" style="left: 55%"></div>
+            <div class="t-marker" style="left: 71.5%"></div>
+            <div class="t-axis-end" style="left: 100%;"></div>
+          </div>
+
+          <div class="steps-grid">
+            <div class="step-column" style="left: 0%">
+              <div class="step-num-wrap up" style="left: -48%;"><div class="step-num">1</div></div>
+              <div class="step-content down_1">
+                <h4>Подача заявки</h4>
+                <p>Обсуждение концепции <br> и разработка технического задания.</p>
+              </div>
+            </div>
+            <div class="step-column s-up" style="left: 21.5%">
+              <div class="step-num-wrap down" style="left: -58%;"><div class="step-num">2</div></div>
+              <div class="step-content up">
+                <h4>Процесс создания рецептуры</h4>
+                <p>Выбор компонентов и выпуск пробного варианта БАД, отвечающего стандартам CTM.</p>
+              </div>
+            </div>
+            <div class="step-column" style="left: 38%">
+              <div class="step-num-wrap up" style="left: -70%;"><div class="step-num">3</div></div>
+              <div class="step-content down">
+                <h4>Контроль качества и тестирование товара</h4>
+                <p>Лабораторный анализ и утверждение регламента производства нужной партии.</p>
+              </div>
+            </div>
+            <div class="step-column s-up" style="left: 55%">
+              <div class="step-num-wrap down" style="left: -84%;"><div class="step-num">4</div></div>
+              <div class="step-content up">
+                <h4>Подбор упаковки и утверждение дизайн-макета</h4>
+                <p>Разработка этикетки с её адаптацией под Ваш бренд.</p>
+              </div>
+            </div>
+            <div class="step-column" style="left: 71%">
+              <div class="step-num-wrap up" style="left: -94%;"><div class="step-num">5</div></div>
+              <div class="step-content down_5">
+                <h4>Производственный цикл партии</h4>
+                <p>Создание биологически активной добавки, её фасовка и финальная подготовка перед отправкой клиенту.</p>
+              </div>
+            </div>
+            <div class="step-column s-up" style="left: 90%;">
+              <div class="step-num-wrap down" style="left: -45%;"><div class="step-num-6 highlight">6</div></div>
+              <div class="step-content up">
+                <h4>Доставка товара на склад <br> заказчика</h4>
+                <p>или на площадку маркетплейса..</p>
+              </div>
+              <div class="step-content-6 down">
+                <div class="done-label">ЗАКАЗ ВЫПОЛНЕН</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="production-section">
+    <div class="container">
+      <div class="production-header">
+        <div class="header-left">
+          <h2>О производстве</h2>
+        </div>
+        <div class="header-right">
+          <div class="brand-line">
+            <img src="static/media/ТРАСТФАРМА-02 1(1).png" alt="ТРАСТФАРМА">
+            <p><strong>«ТРАСТФАРМА»</strong> — это предприятие полного цикла по выпуску БАД и спортивного питания. В основе работы — многолетний профильный опыт, международные практики, собственная технологическая база и строгие регламенты качества.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="production-grid">
+        <div class="prod-item text-block">
+          <p>Собственное производство (цех свыше 1000 м²) и команда экспертов позволяют реализовать проекты любой сложности: от капсулирования, блистеринга, дозирования, фольгирования, маркировки, стикеровки, фасовки и упаковки до выпуска порошковых форм — протеина, предтренировочных порошков и других специализированных смесей для спортивного питания.</p>
+        </div>
+        <div class="prod-item image-block"><img src="static/media/Mask group(4).png" alt="Цех"></div>
+        <div class="prod-item image-block"><img src="static/media/Mask group(5).png" alt="Оборудование"></div>
+        <div class="prod-item image-block"><img src="static/media/Mask group(6).png" alt="Банки"></div>
+        <div class="prod-item image-block"><img src="static/media/Mask group(7).png" alt="Лаборатория"></div>
+        <div class="prod-item text-block gray-text">
+          <p>Ежегодно проходим сертификацию <strong>ЭКО, HACCP, HALAL, GMP, ISO и EAC</strong>. Продукция соответствует строгим юридическим нормам. Имеем успешный опыт вывода товаров партнёров на международный рынок через экспорт. Предлагаем конкурентные цены при высоком качестве услуг.</p>
+        </div>
+        <div class="prod-item image-block"><img src="static/media/Mask group(8).png" alt="Упаковка"></div>
+        <div class="prod-item image-block"><img src="static/media/Gemini_Generated_Image_the8rbthe8rbthe8 1.png" alt="Производство"></div>
+        <div class="prod-item image-block tall-image"><img src="static/media/Mask group(9).png" alt="Контроль качества"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offers-section">
+    <div class="container">
+      <div class="offers-grid">
+        <div class="offers-left">
+          <h2 class="section-title"><span class="orange-text">Что</span> мы предлагаем</h2>
+          <div class="offer-item">
+            <div class="offer-icon"><img src="static/media/_Режим_изоляции(1).svg" alt=""></div>
+            <div class="offer-text">
+              <h4>Инновации и точность:</h4>
+              <p>Мы разрабатываем рецептуры под ваш запрос или создаем уникальные формулы «с нуля».</p>
+            </div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon"><img src="static/media/_Layer_.svg" alt=""></div>
+            <div class="offer-text">
+              <h4>Сквозной контроль:</h4>
+              <p>Каждый этап — от проверки сырья до тестов готовой партии — проходит строгий контроль качества.</p>
+            </div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon"><img src="static/media/Hh.svg" alt=""></div>
+            <div class="offer-text">
+              <h4>Полная экспертиза:</h4>
+              <p>Берем на себя весь цикл: от вашей идеи до финального продукта на складе.</p>
+            </div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon"><img src="static/media/_Слой_1(1).svg" alt=""></div>
+            <div class="offer-text">
+              <h4>Гарантия легальности:</h4>
+              <p>Поможем с регистрацией, сертификацией и любым юридическим сопровождением.</p>
+            </div>
+          </div>
+          <div class="offer-item">
+            <div class="offer-icon"><img src="static/media/_Слой_1(2).svg" alt=""></div>
+            <div class="offer-text">
+              <h4>Удобство для всех:</h4>
+              <p>Работаем без минимальных тиражей — подстроимся и под малый, и под крупный бизнес.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="offers-right">
+          <h2 class="section-title">Форматы сотрудничества</h2>
+          <div class="format-item">
+            <span class="format-number">01</span>
+            <div class="format-text">
+              <h4>База рецептур:</h4>
+              <p>190+ готовых стабильных формул на выбор.</p>
+            </div>
+          </div>
+          <div class="format-item">
+            <span class="format-number">02</span>
+            <div class="format-text">
+              <h4>Оптимизация вашего рецепта:</h4>
+              <p>Более 80 собственных рецептур, прошедших все тесты на стабильность и соответствие стандартам.</p>
+            </div>
+          </div>
+          <div class="format-item">
+            <span class="format-number">03</span>
+            <div class="format-text">
+              <h4>Создание с нуля:</h4>
+              <p>Полный цикл разработки нового продукта с нуля по вашему заданию — от дизайна и концепции до финальной упаковки.</p>
+            </div>
+          </div>
+          <div class="format-image">
+            <img src="static/media/GG_p.png" alt="Упаковка">
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-section">
+        <h2 class="section-title"><span class="orange-text">Если</span> не нашли ответ на свой вопрос</h2>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question" @click="toggleFaq(0)">Что такое контрактное производство БАД? <span class="faq-toggle">{{ faqOpen[0] ? '−' : '+' }}</span></button>
+            <div class="faq-answer" v-show="faqOpen[0]">
+              <p>Контрактное производство БАД — это производство биологически активных добавок под заказ, когда вы предоставляете рецептуру или выбираете из готовых формул, а мы изготавливаем продукцию под вашим брендом.</p>
+            </div>
+          </div>
+          <div class="faq-item active">
+            <button class="faq-question" @click="toggleFaq(1)">Как происходит производство БАД под вашим брендом? <span class="faq-toggle">{{ faqOpen[1] ? '−' : '+' }}</span></button>
+            <div class="faq-answer" v-show="faqOpen[1]">
+              <p>Вы можете выбрать один из трех вариантов сотрудничества: мы предлагаем готовые проверенные рецептуры с возможностью адаптации под ваш бренд, разработаем уникальный продукт с эксклюзивной формулой на основе ваших требований и последних научных исследований или произведем продукт по вашему собственному рецепту с высоким уровнем качества. Мы сопровождаем вас на каждом этапе — от идеи до готового продукта на полке, включая помощь с сертификацией, упаковкой и маркетинговым сопровождением.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" @click="toggleFaq(2)">Где можно ознакомиться с ценами и услугами? <span class="faq-toggle">{{ faqOpen[2] ? '−' : '+' }}</span></button>
+            <div class="faq-answer" v-show="faqOpen[2]">
+              <p>Вы можете оставить заявку на нашем сайте, и мы пришлем вам актуальный прайс-лист с ценами на все услуги.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" @click="toggleFaq(3)">Какие БАДы вы сможете произвести?<span class="faq-toggle">{{ faqOpen[3] ? '−' : '+' }}</span></button>
+            <div class="faq-answer" v-show="faqOpen[3]">
+              <p>Мы производим витамины, минералы, протеины, спортивное питание, специализированные препараты и многое другое — практически любые формы БАД.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="feedback-section">
+    <div class="container">
+      <div class="reviews-header">
+        <h2>Отзывы заказчиков</h2>
+        <p>Высокое качество, соблюдение сроков и комфортные условия работы уже отмечены нашими заказчиками. Рекомендуем ознакомиться с отзывами, чтобы составить собственное мнение.</p>
+      </div>
+      
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="user-header">
+            <div class="user-avatar orange-bg"><img src="static/media/eth_logo.svg" alt=""></div>
+            <div class="user-name">
+              <strong>Николай Патрубов</strong>
+              <span>ООО «ФАРМ НУТРИШЕН»</span>
+            </div>
+          </div>
+          <div class="review-meta">
+            <div class="stars-row">
+              <span class="heart">❤️</span>
+              <span class="stars">★★★★★</span>
+            </div>
+            <span class="city">г. Москва</span>
+          </div>
+          <div class="review-body">
+            <p>Работаем недавно, но первые впечатления — очень хорошие. Товар пришёл именно тот, что заказывали, без сюрпризов. По деньгам вышло адекватно: условия гибкие, всегда идём навстречу друг другу. До этого с другими поставщиками мучился с жёсткими расценками, здесь дышится легче. По срокам пока рано делать окончательные выводы (всего пара заказов за плечами), но уже вижу потенциал их улучшения. Думаю, через месяц-полтора смогу сказать точнее. Но даже сейчас чувствуется: если попросить — можно скорректировать время под реалии. Менеджеры и производство работают добросовестно, стараются вникнуть в задачу и решить её без лишней бюрократии. Рекомендую присмотреться тем, кто ищет ответственного партнёра без пафоса.</p>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="user-header">
+            <div class="user-avatar orange-bg"><img src="static/media/eth_logo.svg" alt=""></div>
+            <div class="user-name">
+              <strong>Николай Патрубов</strong>
+              <span>ООО «ФАРМ НУТРИШЕН»</span>
+            </div>
+          </div>
+          <div class="review-meta">
+            <div class="stars-row">
+              <span class="heart">❤️</span>
+              <span class="stars">★★★★★</span>
+            </div>
+            <span class="city">г. Москва</span>
+          </div>
+          <div class="review-body">
+            <p>Работаем недавно, но первые впечатления — очень хорошие. Товар пришёл именно тот, что заказывали, без сюрпризов. По деньгам вышло адекватно: условия гибкие, всегда идём навстречу друг другу. До этого с другими поставщиками мучился с жёсткими расценками, здесь дышится легче. По срокам пока рано делать окончательные выводы (всего пара заказов за плечами), но уже вижу потенциал их улучшения. Думаю, через месяц-полтора смогу сказать точнее. Но даже сейчас чувствуется: если попросить — можно скорректировать время под реалии. Менеджеры и производство работают добросовестно, стараются вникнуть в задачу и решить её без лишней бюрократии. Рекомендую присмотреться тем, кто ищет ответственного партнёра без пафоса.</p>
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="user-header">
+            <div class="user-avatar orange-bg"><img src="static/media/eth_logo.svg" alt=""></div>
+            <div class="user-name">
+              <strong>Николай Патрубов</strong>
+              <span>ООО «ФАРМ НУТРИШЕН»</span>
+            </div>
+          </div>
+          <div class="review-meta">
+            <div class="stars-row">
+              <span class="heart">❤️</span>
+              <span class="stars">★★★★★</span>
+            </div>
+            <span class="city">г. Москва</span>
+          </div>
+          <div class="review-body">
+            <p>Работаем недавно, но первые впечатления — очень хорошие. Товар пришёл именно тот, что заказывали, без сюрпризов. По деньгам вышло адекватно: условия гибкие, всегда идём навстречу друг другу. До этого с другими поставщиками мучился с жёсткими расценками, здесь дышится легче. По срокам пока рано делать окончательные выводы (всего пара заказов за плечами), но уже вижу потенциал их улучшения. Думаю, через месяц-полтора смогу сказать точнее. Но даже сейчас чувствуется: если попросить — можно скорректировать время под реалии. Менеджеры и производство работают добросовестно, стараются вникнуть в задачу и решить её без лишней бюрократии. Рекомендую присмотреться тем, кто ищет ответственного партнёра без пафоса.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-block">
+        <div class="calc-info">
+          <h2>Давайте оценим экономику вашего старта и рассчитаем рентабельность первой партии</h2>
+          <p class="orange-text calc">Оставьте заявку в форме, и мы пришлем актуальный прайс-лист.</p>
+          <div class="calc-socials">
+            <p>Или напишите нам:</p>
+            <div class="calc-social-btns">
+              <a href="#" class="btn-outline wa">Получить расчет MAX <img src="static/media/Link → max-color.png.png"></a>
+              <a href="#" class="btn-outline tg">Получить расчет Telegram <img src="static/media/Vector(3).svg"></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-form-card">
+          <h3>Рассчитать стоимость выпуска первой партии</h3>
+          <form @submit.prevent="submitCalcForm">
+            <div class="f-group">
+              <label>Выберите из списка категорию, которая вас интересует.</label>
+              <select v-model="calcForm.product">
+                <option value="">Выберите продукт</option>
+                <option>Витамины и минералы</option>
+                <option>Протеины</option>
+                <option>Спортивное питание</option>
+                <option>Специальные препараты</option>
+              </select>
+            </div>
+
+            <div class="f-group">
+              <label>Укажите желаемое количество товара в штуках.</label>
+              <input type="text" placeholder="Количество" v-model="calcForm.quantity">
+            </div>
+
+            <div class="f-row">
+              <div class="f-group">
+                <label>Как удобнее получить расчёт?</label>
+                <div class="radio-group">
+                  <label><input type="radio" value="max" v-model="calcForm.contactMethod"><img src="static/media/Link → max-color.png.png"></label>
+                  <label><input type="radio" value="telegram" v-model="calcForm.contactMethod"><img src="static/media/Vector(3).svg"></label>
+                </div>
+              </div>
+              <div class="f-group">
+                <label>Телефон</label>
+                <input type="tel" placeholder="+7 000 000 00 00" v-model="calcForm.phone">
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary-grad">Получить расчет</button>
+            <p v-if="calcForm.message" style="color: #77C043; margin-top: 10px;">{{ calcForm.message }}</p>
+            <p class="agree">Я согласен на обработку моих <a href="#" class="orange-text">персональных данных</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <img src="static/media/Тран.svg" alt="ТРАСТФАРМА" class="footer-logo">
+          <p class="about-text">Контрактное производство спортивного питания и БАДов</p>
+          <div class="footer-socials">
+            <a href="#"><img src="static/media/Vector(4).svg" alt="TG"></a>
+            <a href="#"><img src="static/media/Vector(5).svg" alt="WA"></a>
+          </div>
+          <a href="tel:89450000000" class="footer-phone">8 (945) 000-00-00</a>
+          <a href="mailto:trustpharma@yandex.ru" class="footer-email">trustpharma@yandex.ru</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Навигация</h4>
+          <ul>
+            <li><a href="#">Главная</a></li>
+            <li><a href="#">Контрактное производство</a></li>
+            <li><a href="#">Каталог</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Каталог</h4>
+          <ul>
+            <li><a href="#">Жиросжигатели</a></li>
+            <li><a href="#">Протеин</a></li>
+            <li><a href="#">Гейнеры</a></li>
+            <li><a href="#">Коллагены</a></li>
+            <li><a href="#">Креатины</a></li>
+            <li><a href="#">Витамины и минералы</a></li>
+            <li><a href="f#">Весь каталог</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Время работы</h4>
+          <p>С 10:00 до 18:00</p>
+          <h4 class="addr-head">Адрес</h4>
+          <p>г. Москва, Новая улица, 6, деревня Островцы, городской округ Люберцы, Московская область</p>
+        </div>
+
+        <div class="footer-col legal-col">
+          <h4>Юридическая информация</h4>
+          <p>ООО «ТРАСТ ФАРМАЦЕВТИКАЛС»<br>ИНН: 0530011760<br>КПП: 053001001</p>
+          <h4 class="director-head">Генеральный директор</h4>
+          <p>Шихсефиев Магомед Нажмудинович</p>
+          <p class="copyright">ООО «ТРАСТ ФАРМАЦЕВТИКАЛС» 2026 @ Все права защищены</p>
+        </div>
+      </div>
+
+      <div class="cookie-bar">
+        <p>Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов.</p>
+        <button class="cookie-btn" @click="acceptCookies">Принять</button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>
